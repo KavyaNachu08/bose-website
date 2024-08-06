@@ -1,0 +1,24 @@
+@mixin flex($display:flex, $flex-dir: null, $flex-wrap:wrap, $j-content: null, $a-item: null) {
+    align-items: $a-item;
+    flex-direction: $flex-dir;
+    display: $display;
+    flex-wrap: $flex-wrap;
+    justify-content: $j-content;
+}
+
+@mixin bg-image($bg-pos:center, $clr: $white, $bg-size: cover,$bg-img:null, $ht:null, $max-ht:null, $m-btn:null) {
+    background-position: $bg-pos;
+    background-size: cover;
+    background-image: $bg-img;
+    color:$clr;
+    height:$ht;
+    max-height: $max-ht;
+    margin-bottom: $m-btn;
+}
+
+@mixin font($f-size:null, $f-fam:null , $f-weight:null, $line-ht:null){
+    font-size: $f-size;
+    font-family: $f-fam;
+    font-weight: $f-weight;
+    line-height: $line-ht;
+}

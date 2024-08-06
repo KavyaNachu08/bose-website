@@ -1,0 +1,109 @@
+
+@font-face {
+    font-family: gotham-medium;
+    src: url("../Gotham-Font/GothamMedium.ttf");
+}
+
+
+@font-face {
+    font-family: gotham-bold;
+    src: url("../Gotham-Font/GothamBold.ttf");
+}
+
+
+@font-face {
+    font-family: gotham-light;
+    src: url("../Gotham-Font/GothamLight.ttf");
+}
+
+
+@font-face {
+    font-family: gotham-book;
+    src: url("../Gotham-Font/GothamBook.ttf");
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot');
+    src:  url('../fonts/icomoon.eot') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf') format('truetype'),
+      url('../fonts/icomoon.woff') format('woff'),
+      url('../fonts/icomoon.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    // speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-north_east:before {
+    content: "\e909";
+  }
+  .icon-arrow-right:before {
+    content: "\e900";
+  }
+  .icon-battery-full:before {
+    content: "\e901";
+  }
+  .icon-bluetooth:before {
+    content: "\e902";
+  }
+  .icon-checkmark:before {
+    content: "\e903";
+  }
+  .icon-cheveron-outline-left:before {
+    content: "\e904";
+  }
+  .icon-cheveron-outline-right:before {
+    content: "\e905";
+  }
+  .icon-cheveron-right:before {
+    content: "\e906";
+  }
+  .icon-close:before {
+    content: "\e90a";
+  }
+  .icon-search:before {
+    content: "\e907";
+  }
+  .icon-user-solid-circle:before {
+    content: "\e908";
+  }
+  .icon-cart:before {
+    content: "\e93a";
+  }
+  .icon-mobile:before {
+    content: "\e958";
+  }
+  .icon-heart:before {
+    content: "\e9da";
+  }
+  .icon-volume-medium:before {
+    content: "\ea27";
+  }
+  .icon-facebook:before {
+    content: "\ea90";
+  }
+  .icon-instagram:before {
+    content: "\ea92";
+  }
+  .icon-twitter:before {
+    content: "\ea96";
+  }
+  .icon-youtube:before {
+    content: "\ea9d";
+  }
+  

@@ -1,0 +1,789 @@
+@import 'fonts.scss';
+@import 'reset.scss';
+@import './partials/variables';
+@import './partials/mixins';
+@import './partials/extend';
+@import './partials/functions';
+
+body {
+    background-color: $white;
+    color: $black;
+    font-family: gotham-book;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.header-top {
+    @include flex($j-content : center, $a-item : center);
+    background-color: $beige;
+
+    &__text {
+        @include font($f-size: 0.75rem);
+        padding: 12px;
+        width: 95%;
+        text-align: center;
+    }
+
+    &__button {
+        cursor: pointer;
+    }
+}
+
+.d-none {
+    display: none;
+}
+
+.header-bottom {
+    @include flex($j-content: space-between, $a-item: center);
+    background-color: $white;
+
+    &__hamburger {
+        @include flex($flex-dir: column);
+        @include flex($display: none);
+
+        &__icon {
+           
+            margin: 3px auto;
+            width: 32px;
+            height: 3px;
+            background-color: $black;
+        }
+    }
+
+    &__navbar {
+        @include flex($display: flex);
+        padding: 0 20px;
+
+        &__navitem {
+            @include font($f-size: 0.935rem, $f-weight: 400, $line-ht: 1.125rem);
+            padding: 26.5px 16px;
+            text-transform: uppercase;
+        }
+
+        &__item {
+            @include font($f-size: toRem(21.25), $line-ht: 1.125rem);
+            padding: 26.5px 16px;
+        }
+    }
+}
+
+
+h2 {
+    @extend %first-letter-capital;
+    @include font($f-size: toRem(200), $f-fam: gotham-bold, $line-ht: 190px);
+    @extend %width-margin;
+    margin-bottom: 176px;
+}
+
+h3 {
+    @extend %first-letter-capital;
+    @include font($f-size: 2.875rem, $line-ht: 3.125rem, $f-fam: gotham-bold);
+    margin-bottom: 30px;
+}
+
+p {
+    @extend %first-letter-capital;
+    @include font($f-size: 1.125rem, $line-ht: 1.6875rem, $f-weight: 400);
+}
+
+.common-heading {
+    @extend %first-letter-capital;
+    @include font($f-size: 4.0625rem, $line-ht: 4.0625rem, $f-fam : gotham-bold);
+}
+
+.hero-section {
+    @include bg-image($bg-img: url('../img/hero-image.jpg'), $ht: 740px, $max-ht: 740px, $m-btn: 176px);
+    @include flex($j-content: center, $a-item: center);
+    overflow: hidden;
+
+    &__content {
+        @include flex($flex-dir: column, $j-content: center, $a-item: center);
+        @include font($f-fam: gotham-bold);
+
+
+        &__heading1 {
+            display: block;
+            animation: slide-in 0.5s ease;
+        }
+
+        @keyframes slide-in {
+            0% {
+                transform: scale(5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        &__heading2 {
+            animation: slide-in 1s ease;
+            @include font($f-size: 8.125rem, $line-ht: 6.875rem, $f-weight: 900);
+        }
+
+    }
+
+}
+
+.feature-list {
+    margin-bottom: 100px;
+
+    &__product1 {
+        @include bg-image($bg-img: url('../img/list-img1.jpg'), $ht: 740px, $max-ht: 740px, $m-btn: 176px);
+        position: relative;
+    }
+
+    &__product2 {
+        @include bg-image($bg-img: url('../img/list-img2.jpg'), $ht: 740px, $max-ht: 740px, $m-btn: 176px);
+        position: relative;
+    }
+
+    &__product3 {
+        @include bg-image($bg-img: url('../img/list-img3.png'), $ht: 740px, $max-ht: 740px, $m-btn: 176px);
+        position: relative;
+    }
+}
+
+
+.product__text {
+    left: 150px;
+    top: 300px;
+    position: absolute;
+    width: 576px;
+}
+
+.button__common {
+    @include flex($display: inline-flex, $a-item: center);
+    @include font($f-size: 0.875rem, $line-ht: 1.5rem);
+    background-color: $brown;
+    border-radius: 5px;
+    bottom: 75px;
+    left: 50px;
+    text-transform: capitalize;
+    position: absolute;
+    color: $white;
+    z-index: 1;
+
+    .icon-arrow-right {
+        color: $black;
+        background-color: $white;
+        padding: 15px;
+    }
+
+    span {
+        padding: 0 15px;
+    }
+}
+
+.rhythm {
+    margin-bottom: 176px;
+
+    &__content {
+        @extend %width-margin;
+
+        &__text {
+            @extend %first-letter-capital;
+            @include font($f-size: 6rem, $line-ht: 5.75rem, $f-fam: gotham-bold);
+            width: 57%;
+            margin-bottom: 30px;
+        }
+
+        &__subtext {
+            width: 60%;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__video {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+
+        video {
+            width: 100%;
+        }
+    }
+
+    &__image {
+        @include bg-image($bg-img: url('../img/earpods3.png'), $ht: 740px, $max-ht: 740px, $m-btn: 176px);
+        position: relative;
+    }
+
+    &__image2 {
+        @include bg-image($bg-img: url('../img/speaker.png'), $ht: 740px, $max-ht: 740px, $m-btn: 176px);
+        position: relative;
+    }
+}
+
+.see-yourself {
+    @extend %width-margin;
+    margin-bottom: 176px;
+
+    &__content {
+        width: 65%;
+
+        &__subtext {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__product {
+        text-align: center;
+        position: relative;
+
+
+        &__btn {
+            margin-top: 20px;
+            padding: 15px;
+            text-transform: uppercase;
+
+            span,
+            i {
+                padding-right: 10px;
+                @include font($f-fam:gotham-medium);
+            }
+
+        }
+    }
+}
+
+.no-scroll-img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.slider {
+    overflow: hidden;
+    @include flex($flex-wrap: nowrap);
+
+    &-image {
+        max-width: 100%;
+        position: relative;
+    }
+}
+
+.double-up {
+    @extend %width-margin;
+    margin-bottom: 176px;
+    @include flex($a-item: center);
+
+    &__content {
+        width: 50%;
+
+        &__text {
+            margin-bottom: 30px;
+        }
+
+        &__subtext {
+            margin-bottom: 40px;
+        }
+
+        .buy-now {
+            padding: 10px 30px;
+            background-color: $white;
+            text-transform: capitalize;
+            border: 1px solid $black;
+            @include font($f-fam: gotham-medium);
+        }
+
+        .discover {
+            padding: 10px 30px;
+            background-color: $white;
+            text-transform: capitalize;
+            border: none;
+            @include font($f-fam: gotham-bold, $f-size: 1rem);
+        }
+    }
+
+    img {
+        width: 600px;
+    }
+
+    &__side-text {
+        width: 35%;
+        margin: auto;
+
+        h4 {
+            @include font($f-size: 1rem, $line-ht: 1.688rem, $f-weight: 600);
+        }
+
+        p {
+            @include font($f-size: 1rem, $line-ht: 1.625rem, $f-weight: 400);
+        }
+    }
+}
+
+.only-text {
+    text-align: center;
+    margin: 300px 500px;
+}
+
+.for-ears {
+    margin-bottom: 100px;
+    text-align: center;
+
+    &__content {
+        display: block;
+        @extend %width-margin;
+        margin-bottom: 50px;
+
+        &__text {
+            width: 45%;
+            margin: auto;
+        }
+    }
+
+    &__video {
+        position: relative;
+        width: 100%;
+
+        &__text {
+            color: $white;
+            left: 50px;
+            top: 300px;
+            position: absolute;
+            width: 700px;
+
+            span {
+                display: block;
+                @extend %first-letter-capital;
+            }
+        }
+
+        video {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+.additional-features {
+    @extend %width-margin;
+    margin-bottom: 176px;
+
+    &__list {
+        @include flex($j-content: space-between);
+        padding-top: 50px;
+
+        &__item {
+            width: 18%;
+            @include flex($flex-dir : column);
+
+            i {
+                @include font($f-size: 4.6rem, $line-ht: 1);
+                @include flex($a-item: center, $j-content: center);
+                background-color: $beige;
+                border-radius: 50%;
+                margin-bottom: 50px;
+                width: 150px;
+                height: 150px;
+            }
+
+            h4 {
+                @extend %first-letter-capital;
+                @include font($f-size: 1rem, $line-ht: 1.688rem, $f-weight: 700);
+            }
+
+            p {
+                @extend %first-letter-capital;
+                @include font($f-size: 1rem, $line-ht: 1.625rem, $f-weight: 500);
+            }
+        }
+    }
+}
+
+.product {
+    width: 51.5%;
+    margin: auto;
+    margin-bottom: 176px;
+
+    &__list {
+        @include flex($j-content: space-between);
+
+        &__card {
+            width: 346px;
+            background-color: $beige;
+            padding: 20px;
+            margin-bottom: 10px;
+
+            i {
+                @include flex($j-content: flex-end);
+                cursor: pointer;
+            }
+
+            img {
+                width: 312px;
+                height: 234px;
+                margin: 40px auto;
+                cursor: pointer;
+            }
+
+            h4 {
+                @extend %first-letter-capital;
+                @include font($f-size: .875rem, $line-ht: 1.25rem, $f-weight: 500);
+                margin-bottom: 70px;
+            }
+
+            .color {
+                @include flex();
+                margin: 20px auto;
+                cursor: pointer;
+
+                span {
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    border: 6px solid $white;
+                    margin: 5px;
+                }
+
+                &-beige {
+                    background-color: $cream;
+                }
+
+                &-black {
+                    background-color: $black;
+                }
+
+                &-grey {
+                    background-color: $grey;
+                }
+
+                span:hover {
+                    scale: 1.15;
+                    border: 4px solid transparent;
+                }
+
+                .active {
+                    outline: 1px solid $grey;
+                }
+            }
+
+        }
+
+        &__card:hover {
+            background-color: $dark-cream;
+        }
+    }
+}
+
+.stories {
+    @extend %width-margin;
+    margin-bottom: 176px;
+
+    &__list {
+        @include flex($j-content: space-between);
+    }
+
+    &-column {
+
+        &__item {
+            width: 565px;
+
+            img {
+                width: 100%;
+                height: 470px;
+                max-width: 100%;
+            }
+
+            h4 {
+                @extend %first-letter-capital;
+                @include font($f-size: 1.5625rem, $line-ht: 1.875rem, $f-weight: 500);
+                margin: 10px 85px 40px 35px;
+                cursor: pointer;
+            }
+
+            .image-margin {
+                margin: 50px auto;
+            }
+
+            .image-large {
+                height: 540px;
+            }
+
+            h4:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+}
+
+.shares {
+    @extend %width-margin;
+    margin-bottom: 176px;
+
+    &__content {
+        width: 50%;
+        margin-bottom: 60px;
+    }
+
+    &__carousel {
+        @include flex($flex-wrap: nowrap, $a-item: center);
+
+        &__list {
+            @include flex($flex-wrap: nowrap, $j-content: space-between);
+            overflow: hidden;
+            animation: slide 1s smooth;
+
+            .carousel-img {
+                width: 262px;
+                height: 262px;
+                margin: auto 10px;
+            }
+        }
+
+        @keyframes slide {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(0%);
+            }
+
+        }
+
+        .icon-cheveron-outline-left:hover,
+        .icon-cheveron-outline-right:hover {
+            border: 1px dotted $black;
+        }
+    }
+}
+
+.icon-cheveron-outline-left,
+.icon-cheveron-outline-right {
+    @include font($f-size: 40px, $f-fam: gotham-light);
+    padding: 110px 0;
+    border: 1px dotted transparent;
+}
+
+footer {
+    background-color: $beige;
+
+}
+
+.footer {
+    @extend %width-margin;
+
+    &__row1 {
+        @include flex($j-content: space-between, $a-item: center);
+        @extend %first-letter-capital;
+        padding: 30px 0;
+
+        &__label {
+            @include font($f-size: 1.5rem, $line-ht: 2.25rem, $f-weight: 500);
+            width: 25%;
+            margin-right: 20px;
+        }
+
+        &__email {
+            width: 50.5%;
+            margin-right: 20px;
+
+        }
+
+        &__send {
+            cursor: pointer;
+            padding: 15px 35px;
+            @extend %first-letter-capital;
+            @include font($f-size: 1rem, $line-ht: 1.625rem, $f-weight: 400, $f-fam:gotham-medium);
+        }
+    }
+
+    &__row2 {
+        text-transform: capitalize;
+        margin: 50px auto;
+        padding-bottom: 30px;
+        border-bottom: 1px solid $grey;
+
+        &__head {
+            @include flex();
+            @include font($f-size: .75rem, $line-ht: 1rem, $f-weight: 600);
+        }
+
+        &__list {
+            @include flex($j-content: space-between);
+            margin: 50px auto;
+        }
+
+        &__social {
+            @include flex($j-content: space-between);
+        }
+    }
+
+    &__row3 {
+        @include flex();
+        text-transform: capitalize;
+        padding-bottom: 100px;
+        @include font($f-size: .75rem, $line-ht: 1rem, $f-weight: 400);
+
+        &__list {
+            @include flex();
+
+            li {
+                margin-left: 20px;
+            }
+
+            li:hover {
+                text-decoration: underline;
+            }
+        }
+
+
+    }
+}
+
+.input-field {
+    width: 100%;
+    border: none;
+    padding: 20px;
+    @include font($f-size: 1rem, $line-ht: 1.625rem, $f-weight: 400);
+}
+
+.breadcrump {
+    margin: auto 10px;
+}
+
+.column {
+    width: 20%;
+
+    &__head {
+        @include font($f-size: .75rem, $line-ht: 1rem, $f-weight: 600);
+        margin-bottom: 15px;
+
+    }
+
+    &__list {
+        margin-bottom: 15px;
+
+        &__item {
+            @include font($f-size: .75rem, $line-ht: 1rem, $f-weight: 400);
+
+            span {
+                margin-left: 45px;
+            }
+        }
+
+        &__item:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__app {
+        display: block;
+        padding: 25px;
+    }
+
+    &__app:hover {
+        text-decoration: underline;
+    }
+}
+
+.social-icons {
+    @include font($f-size: 23.3px);
+}
+
+.icon {
+    margin-right: 30px;
+}
+
+.language {
+    @include font($f-size: .75rem, $line-ht: 1rem, $f-weight: 400);
+}
+
+@media screen and (max-width:1023px) {
+
+    h2 {
+        font-size: 8.5rem;
+    }
+
+    .rhythm__content__text,
+    .double-up__content {
+        width: 100%;
+    }
+
+    .only-text {
+        margin: 300px auto;
+        width: 50%;
+    }
+
+    .double-up__side-text {
+        width: 100%;
+    }
+
+    .footer__row1__label {
+        width: 100%;
+    }
+
+    .column {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width:767px) {
+    h2 {
+        @include font($f-size: 3.5rem, $line-ht: 1);
+    }
+
+    .common-heading {
+        @include font($f-size: 3.0625rem);
+    }
+
+    .hero-section__content__heading2 {
+        @include font($f-size: 6rem);
+    }
+
+    .rhythm__content__text {
+        @include font($f-size: 4rem);
+    }
+
+    .product {
+        width: 90%;
+
+        &__text {
+            width: 90%;
+            left: 10px;
+        }
+    }
+
+    .button__common {
+        left: 10px;
+    }
+
+    .stories,
+    .shares__content,
+    .see-yourself__content,
+    .rhythm__content__subtext,
+    .additional-features__list__item {
+        width: 95%;
+    }
+
+    .stories-column__item {
+        width: 370px;
+    }
+
+    .double-up img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .column {
+        width: 50%;
+    }
+
+    .shares__content h3 {
+        font-size: 2rem;
+    }
+
+    .for-ears,
+    .header-bottom__navbar {
+        @include flex($display: none);
+    }
+}
